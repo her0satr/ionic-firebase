@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { User } from '../../models/user';
 
 import { LoginPage } from '../login/login';
 
@@ -8,14 +10,18 @@ import { LoginPage } from '../login/login';
   templateUrl: 'home.html',
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user = {} as User;
+  
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private storage: Storage) {
+    
+    // check if user exists
+    this.storage.get('user_login').then((val) => {
+      if (val != null) {
+        this.user = JSON.parse(val);
+      }
+    });
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
-    // this.navCtrl.push(LoginPage);
-    console.log('ionViewDidLoad HomePage 2');
-  }
-
 }
