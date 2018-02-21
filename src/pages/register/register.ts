@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../../models/user';
 
@@ -20,7 +20,7 @@ export class RegisterPage {
 
   async Register() {
     try {
-      const result = await this.fireAuth.auth.createUserWithEmailAndPassword(this.user.email, this.user.password);
+      await this.fireAuth.auth.createUserWithEmailAndPassword(this.user.email, this.user.password);
       this.navCtrl.push(LoginPage);
     }
     catch(e) {
