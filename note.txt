@@ -1,0 +1,3 @@
+plugin :
+- ionic cordova plugin add cordova-plugin-camera --save
+- npm install --save @ionic-native/camera
