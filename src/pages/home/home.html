@@ -1,15 +1,9 @@
 <ion-header>
-  <ion-navbar hideBackButton="true">
-    <ion-title>Home</ion-title>
+  <ion-navbar hideBackButton="true" color="primary">
+    <ion-title>Firebase Storage</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <ion-item>
-    <ion-label floating>Email</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
+  <button ion-button (click)="takePhoto()">Take Photo</button>
+  <button ion-button (click)="signOut()">Sign out</button>
 </ion-content>
