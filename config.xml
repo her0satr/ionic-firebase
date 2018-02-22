@@ -83,5 +83,7 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <allow-navigation href="http://172.18.3.125:8100" />
     <plugin name="cordova-plugin-camera" spec="^4.0.2" />
+    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
+    <plugin name="cordova-sms-plugin" spec="^0.1.11" />
     <engine name="android" spec="7.0.0" />
 </widget>

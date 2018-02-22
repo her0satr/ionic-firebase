@@ -4,7 +4,10 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+
 import { Camera } from '@ionic-native/camera';
+import { CallNumber } from '@ionic-native/call-number';
+import { SMS } from '@ionic-native/sms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -42,6 +45,8 @@ import { RegisterPage } from '../pages/register/register';
     StatusBar,
     SplashScreen,
     Camera,
+    CallNumber,
+    SMS,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

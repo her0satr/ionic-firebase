@@ -3,7 +3,10 @@ import { NavController, NavParams, AlertController  } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { User } from '../../models/user';
 import { storage } from 'firebase';
+
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { CallNumber } from '@ionic-native/call-number';
+import { SMS } from '@ionic-native/sms';
 
 import { LoginPage } from '../login/login';
 
@@ -20,6 +23,8 @@ export class HomePage {
     public navParams: NavParams,
     private camera: Camera,
     private alertCtrl: AlertController,
+    private callNumber: CallNumber,
+    private sms: SMS,
     private storage: Storage) {
     
     // set array image
@@ -88,6 +93,53 @@ export class HomePage {
     }, (err) => {
      // Handle error
     });
+  }
+
+  makeCall() {
+    let alert = this.alertCtrl.create({
+      title: 'No Telepon',
+      inputs: [
+        { name: 'phone_no', placeholder: 'No Telepon' }
+      ],
+      buttons: [
+        { text: 'Cancel' },
+        {
+          text: 'Call',
+          cssClass: "alertDanger",
+          handler: data => {
+            if (data.phone_no.length > 0) {
+              this.callNumber.callNumber(data.phone_no, false)
+                .then(() => console.log('Launched dialer!'))
+                .catch(() => console.log('Error launching dialer'));
+            }
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  makeSms() {
+    let alert = this.alertCtrl.create({
+      title: 'No Telepon',
+      inputs: [
+        { name: 'phone_no', placeholder: 'No Telepon' },
+        { name: 'message', placeholder: 'Kirim' }
+      ],
+      buttons: [
+        { text: 'Cancel' },
+        {
+          text: 'Sent',
+          cssClass: "alertDanger",
+          handler: data => {
+            if (data.phone_no.length > 0 && data.message.length > 0) {
+              this.sms.send(data.phone_no, data.message);
+            }
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   signOut() {
