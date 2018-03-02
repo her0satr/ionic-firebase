@@ -1,37 +1,22 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController  } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
-import { User } from '../../models/user';
+import { AlertController  } from 'ionic-angular';
 import { storage } from 'firebase';
 
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
-import { LoginPage } from '../login/login';
-
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-camera',
+  templateUrl: 'camera.html',
 })
-export class HomePage {
-  user = {} as User;
+export class CameraPage {
   images: Array<{src: String}>;
   
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
     private camera: Camera,
-    private alertCtrl: AlertController,
-    private storage: Storage) {
+    private alertCtrl: AlertController) {
     
     // set array image
     this.images = [];
-    
-    // check if user exists
-    this.storage.get('user_login').then((val) => {
-      if (val != null) {
-        this.user = JSON.parse(val);
-      }
-    });
   }
 
   takePhoto() {
@@ -80,20 +65,15 @@ export class HomePage {
       saveToPhotoAlbum: false
     }
     this.camera.getPicture(options).then((imageData) => {
-     // imageData is either a base64 encoded string or a file URI
-     // If it's base64:
-     let base64Image = 'data:image/jpeg;base64,' + imageData;
-     this.images.unshift({
-       src: base64Image
-     })
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      let base64Image = 'data:image/jpeg;base64,' + imageData;
+      this.images.unshift({
+        src: base64Image
+      })
     }, (err) => {
-     // Handle error
-    });
-  }
-
-  signOut() {
-    this.storage.remove('user_login').then(() => {
-      this.navCtrl.push(LoginPage);
+      // Handle error
+      console.log(err);
     });
   }
 }

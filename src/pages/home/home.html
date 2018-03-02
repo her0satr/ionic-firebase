@@ -1,24 +1,8 @@
 <ion-header>
   <ion-navbar hideBackButton="true" color="primary">
-    <ion-title>Firebase Storage</ion-title>
+    <ion-title>Demo Application</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <ion-slides style="height: 50vh">
-    <ion-slide *ngFor="let image of images">
-      <ion-card>
-        <img [src]="image.src" />
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
-  <p>
-    <button ion-button round icon-only block (click)="takePhotoGit()">
-      <ion-icon name="camera"></ion-icon>
-    </button>
-  </p>
-
-  <button ion-button (click)="takePhoto()">Take Photo</button>
-  <button ion-button (click)="makeCall()">Call</button>
-  <button ion-button (click)="makeSms()">SMS</button>
   <button ion-button (click)="signOut()">Sign out</button>
 </ion-content>

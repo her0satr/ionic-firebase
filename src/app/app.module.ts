@@ -16,15 +16,22 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { CameraPage } from '../pages/camera/camera';
+import { CommunicationPage } from '../pages/communication/communication';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    ListPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    CameraPage,
+    CommunicationPage
   ],
   imports: [
     HttpModule,
@@ -38,8 +45,11 @@ import { RegisterPage } from '../pages/register/register';
   entryComponents: [
     MyApp,
     HomePage,
+    ListPage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    CameraPage,
+    CommunicationPage
   ],
   providers: [
     StatusBar,
