@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { CameraPage } from '../camera/camera';
 import { CommunicationPage } from '../communication/communication';
+import { GoogleMapPage } from '../google-map/google-map';
 
 @Component({
   selector: 'page-list',
@@ -27,6 +28,7 @@ export class ListPage {
     // additional page
     this.items.push({ title: 'Camera', note: '', icon: 'camera', type: 'page', page_path: CameraPage });
     this.items.push({ title: 'Communication', note: '', icon: 'megaphone', type: 'page', page_path: CommunicationPage });
+    this.items.push({ title: 'Google Map', note: '', icon: 'map', type: 'page', page_path: GoogleMapPage });
   }
 
   itemTapped(event, item) {

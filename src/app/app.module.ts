@@ -21,7 +21,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { CameraPage } from '../pages/camera/camera';
 import { CommunicationPage } from '../pages/communication/communication';
-
+import { GoogleMapPage } from '../pages/google-map/google-map';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { CommunicationPage } from '../pages/communication/communication';
     LoginPage,
     RegisterPage,
     CameraPage,
-    CommunicationPage
+    CommunicationPage,
+    GoogleMapPage
   ],
   imports: [
     HttpModule,
@@ -49,7 +50,8 @@ import { CommunicationPage } from '../pages/communication/communication';
     LoginPage,
     RegisterPage,
     CameraPage,
-    CommunicationPage
+    CommunicationPage,
+    GoogleMapPage
   ],
   providers: [
     StatusBar,
