@@ -17,7 +17,7 @@ export class ListPage {
     // set item and icon
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane', 'american-football', 'boat', 'bluetooth', 'build'];
     this.items = [];
-    for (let i = 1; i < 11; i++) {
+    for (let i = 1; i < 4; i++) {
       this.items.push({
         title: 'Item ' + i,
         note: 'This is item #' + i,

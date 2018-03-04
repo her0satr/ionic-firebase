@@ -1,9 +1,11 @@
 <ion-header>
   <ion-navbar hideBackButton="true" color="primary">
-    <ion-title>googleMap</ion-title>
+    <ion-title>Geolocation Demo</ion-title>
   </ion-navbar>
 
 </ion-header>
 <ion-content padding>
-  Map
+  <p>Latitude : {{ lat }}</p>
+  <p>Longitude : {{ lng }}</p>
+  <div #map id="map"></div>
 </ion-content>
