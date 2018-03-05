@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../../models/user';
 import { Storage } from '@ionic/storage';
@@ -19,6 +19,7 @@ export class LoginPage {
     public navParams: NavParams,
     public viewCtrl: ViewController,
     private fireAuth: AngularFireAuth,
+    private alertCtrl: AlertController,
     private storage: Storage) {
 
     // check if user exists
@@ -40,7 +41,12 @@ export class LoginPage {
       }
     }
     catch(e) {
-      console.error(e);
+      let alert = this.alertCtrl.create({
+        title: 'Error',
+        subTitle: 'User not found.',
+        buttons: ['Dismiss']
+      });
+      alert.present();
     }
   }
 
