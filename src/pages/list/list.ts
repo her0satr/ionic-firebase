@@ -4,6 +4,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { CameraPage } from '../camera/camera';
 import { CommunicationPage } from '../communication/communication';
 import { GoogleMapPage } from '../google-map/google-map';
+import { CrudFirebasePage } from '../crud-firebase/crud-firebase';
 
 @Component({
   selector: 'page-list',
@@ -17,7 +18,7 @@ export class ListPage {
     // set item and icon
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane', 'american-football', 'boat', 'bluetooth', 'build'];
     this.items = [];
-    for (let i = 1; i < 4; i++) {
+    for (let i = 1; i < 2; i++) {
       this.items.push({
         title: 'Item ' + i,
         note: 'This is item #' + i,
@@ -26,6 +27,7 @@ export class ListPage {
     }
 
     // additional page
+    this.items.push({ title: 'CRUD Firebase', note: '', icon: 'add', type: 'page', page_path: CrudFirebasePage });
     this.items.push({ title: 'Camera', note: '', icon: 'camera', type: 'page', page_path: CameraPage });
     this.items.push({ title: 'Communication', note: '', icon: 'megaphone', type: 'page', page_path: CommunicationPage });
     this.items.push({ title: 'Google Map', note: '', icon: 'map', type: 'page', page_path: GoogleMapPage });

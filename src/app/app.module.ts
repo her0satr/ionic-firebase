@@ -11,6 +11,7 @@ import { CallNumber } from '@ionic-native/call-number';
 import { Geolocation } from '@ionic-native/geolocation';
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { IonicStorageModule } from '@ionic/storage';
@@ -23,6 +24,7 @@ import { RegisterPage } from '../pages/register/register';
 import { CameraPage } from '../pages/camera/camera';
 import { CommunicationPage } from '../pages/communication/communication';
 import { GoogleMapPage } from '../pages/google-map/google-map';
+import { CrudFirebasePage } from '../pages/crud-firebase/crud-firebase';
 
 @NgModule({
   declarations: [
@@ -33,14 +35,15 @@ import { GoogleMapPage } from '../pages/google-map/google-map';
     RegisterPage,
     CameraPage,
     CommunicationPage,
-    GoogleMapPage
+    GoogleMapPage,
+    CrudFirebasePage
   ],
   imports: [
     HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireAuthModule,
+    AngularFireAuthModule, AngularFireDatabaseModule,
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
@@ -52,7 +55,8 @@ import { GoogleMapPage } from '../pages/google-map/google-map';
     RegisterPage,
     CameraPage,
     CommunicationPage,
-    GoogleMapPage
+    GoogleMapPage,
+    CrudFirebasePage
   ],
   providers: [
     StatusBar,
