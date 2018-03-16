@@ -5,6 +5,7 @@ import { CameraPage } from '../camera/camera';
 import { CommunicationPage } from '../communication/communication';
 import { GoogleMapPage } from '../google-map/google-map';
 import { CrudFirebasePage } from '../crud-firebase/crud-firebase';
+import { EventPage } from '../event/event';
 
 @Component({
   selector: 'page-list',
@@ -28,6 +29,7 @@ export class ListPage {
 
     // additional page
     this.items.push({ title: 'CRUD Firebase', note: '', icon: 'add', type: 'page', page_path: CrudFirebasePage });
+    this.items.push({ title: 'Event', note: '', icon: 'trending-up', type: 'page', page_path: EventPage });
     this.items.push({ title: 'Camera', note: '', icon: 'camera', type: 'page', page_path: CameraPage });
     this.items.push({ title: 'Communication', note: '', icon: 'megaphone', type: 'page', page_path: CommunicationPage });
     this.items.push({ title: 'Google Map', note: '', icon: 'map', type: 'page', page_path: GoogleMapPage });

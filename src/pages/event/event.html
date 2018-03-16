@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" color="primary">
+    <ion-title>Event</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary" floating>Value 1</ion-label>
+      <ion-input [(ngModel)]="promise_a"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Value 2</ion-label>
+      <ion-input [(ngModel)]="promise_b"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Result</ion-label>
+      <ion-input [(ngModel)]="promise_result"></ion-input>
+    </ion-item>
+    <div>
+      <button ion-button color="primary" (click)="checkPromise()">Promise</button>
+      <button ion-button color="primary" (click)="checkPromiseRace()">Promise Race</button>
+    </div>
+  </ion-list>
+  <br /><br />
+
+  <p>Timer Value : {{timerValue}}</p>
+  <button ion-button full (click)="timeStart()">Start Timer</button>
+  <button ion-button full (click)="timeStop()">Stop Timer</button>
+</ion-content>

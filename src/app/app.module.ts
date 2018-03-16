@@ -25,6 +25,9 @@ import { CameraPage } from '../pages/camera/camera';
 import { CommunicationPage } from '../pages/communication/communication';
 import { GoogleMapPage } from '../pages/google-map/google-map';
 import { CrudFirebasePage } from '../pages/crud-firebase/crud-firebase';
+import { EventPage } from '../pages/event/event';
+
+import { MathProvider } from '../providers/math/math';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { CrudFirebasePage } from '../pages/crud-firebase/crud-firebase';
     CameraPage,
     CommunicationPage,
     GoogleMapPage,
-    CrudFirebasePage
+    CrudFirebasePage,
+    EventPage
   ],
   imports: [
     HttpModule,
@@ -56,7 +60,8 @@ import { CrudFirebasePage } from '../pages/crud-firebase/crud-firebase';
     CameraPage,
     CommunicationPage,
     GoogleMapPage,
-    CrudFirebasePage
+    CrudFirebasePage,
+    EventPage
   ],
   providers: [
     StatusBar,
@@ -65,7 +70,8 @@ import { CrudFirebasePage } from '../pages/crud-firebase/crud-firebase';
     CallNumber,
     SMS,
     Geolocation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MathProvider
   ]
 })
 export class AppModule {}
